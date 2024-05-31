@@ -123,7 +123,7 @@ function BookmarkedPage() {
         </p>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] py-10">
-          {movies.length === 0 ? (
+          {movies?.length === 0 ? (
             <h2 className="py-20 text-center font-bold text-3xl text-[#fc4747]">
               You do not have any bookmarked movies
             </h2>
