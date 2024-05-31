@@ -10,9 +10,10 @@ import axios from "axios";
 import { getSearchItems } from "../store/searchSlice";
 import VideoPlayer from "../components/VideoPlayer";
 import Button from "../components/Button";
+import { setLoading } from "../store/userSlice";
 
 function SearchPage() {
-  const [loading, setLoading] = useState(false);
+  const { loading } = useSelector((store) => store.user);
 
   const [videoUrl, setVideoUrl] = useState("");
   const [videoSite, setVideoSite] = useState("");
@@ -42,8 +43,9 @@ function SearchPage() {
   // Function to handle searched movies and tv shows
   async function getSearchedMoviesTVShows() {
     dispatch(getSearchItems([]));
-    setLoading(true);
+
     try {
+      setLoading(true);
       const res = await axios.get(
         `${SEARCH_PATH}/multi?query=${query}`,
         API_Option

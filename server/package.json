@@ -6,9 +6,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "npm start",
-    "client": "npm run dev --prefix ./client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "server": "npm start"
   },
   "author": "",
   "license": "ISC",

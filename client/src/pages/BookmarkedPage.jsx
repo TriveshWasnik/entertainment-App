@@ -20,30 +20,32 @@ function BookmarkedPage() {
 
   // get bookmarked movies functionality
   async function getBookmarkedMovies() {
-    setLoading(true);
     try {
       const movies = await useGetBookmarkedMovies();
       setMovies(movies);
     } catch (error) {
       console.log(error.message);
     }
-    setLoading(false);
   }
   // get bookmarked TV Shows functionality
   async function getBookmarkedTVShows() {
-    setLoading(true);
     try {
       const tvshows = await useGetBookmarkedTVShows();
       setTVShows(tvshows);
     } catch (error) {
       console.log(error.message);
     }
-    setLoading(false);
   }
 
   useEffect(() => {
-    getBookmarkedMovies();
-    getBookmarkedTVShows();
+    try {
+      setLoading(true);
+      getBookmarkedMovies();
+      getBookmarkedTVShows();
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   // Function to handle play button click for Movie and TV Series
@@ -123,11 +125,12 @@ function BookmarkedPage() {
         </p>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] py-10">
-          {movies?.length === 0 ? (
+          {
+            /*movies.length === 0 ? (
             <h2 className="py-20 text-center font-bold text-3xl text-[#fc4747]">
               You do not have any bookmarked movies
             </h2>
-          ) : (
+          ) : ( */
             movies?.map((item) => (
               <DisplayCardGeneral
                 key={item?.id}
@@ -140,8 +143,9 @@ function BookmarkedPage() {
                 bookmarked={true}
                 getVideoInfo={() => getVideoInfo(item?.id, "movie")}
               />
+              //  )
             ))
-          )}
+          }
         </div>
       )}
 
@@ -152,11 +156,12 @@ function BookmarkedPage() {
         </p>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] py-10">
-          {tvshows.length === 0 ? (
+          {
+            /*tvshows.length === 0 ? (
             <h2 className="py-20 text-center font-bold text-3xl text-[#fc4747]">
               You do not have any bookmarked TV Shows
             </h2>
-          ) : (
+          ) : ( */
             tvshows?.map((item) => (
               <DisplayCardGeneral
                 key={item?.id}
@@ -169,8 +174,9 @@ function BookmarkedPage() {
                 bookmarked={true}
                 getVideoInfo={() => getVideoInfo(item?.id, "tv")}
               />
+              //  )
             ))
-          )}
+          }
         </div>
       )}
     </div>

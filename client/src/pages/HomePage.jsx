@@ -49,7 +49,9 @@ function HomePage() {
 
   // called the hook useRecommended
   const setRecommended = async () => {
+    setLoading(true);
     await useRecommended(movieId, tvshowId);
+    setLoading(false);
   };
   setRecommended();
 

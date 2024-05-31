@@ -17,24 +17,21 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:5174",
-      "http://localhost:3000",
-    ],
+    origin: ["http://localhost:5173", "http://localhost:5174"],
     credentials: true,
   })
 );
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.join(__dirname, "./client/dist")));
+/*app.use(express.static(path.join(__dirname, "./client/dist")));
 
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/dist/index.html"));
-});
+});*/
 
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/bookmark", bookmarkRoute);
+
 dbConnection();
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, function () {

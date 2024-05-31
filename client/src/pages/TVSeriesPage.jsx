@@ -53,8 +53,9 @@ function TVSeriesPage() {
   // Function to handle searched tv shows
   async function getSearchedTVSeries() {
     dispatch(getSearchItems([]));
-    setLoading(true);
+
     try {
+      setLoading(true);
       const res = await axios.get(
         `${SEARCH_PATH}/tv?query=${query}`,
         API_Option

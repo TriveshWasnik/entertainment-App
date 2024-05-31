@@ -1,8 +1,8 @@
 import axios from "axios";
-import { API_END_POINT } from "../utils/constant";
+import { API_END_POINT } from "../utils/constant.js";
 
-/* hook for getting Bookmarked TV Shows  */
 export default async function useGetBookmarkedTVShows() {
+  /* hook for getting Bookmarked TV Shows  */
   try {
     const res = await axios.get(`${API_END_POINT}/bookmark/tvshows`, {
       headers: {
@@ -10,7 +10,6 @@ export default async function useGetBookmarkedTVShows() {
       },
       withCredentials: true,
     });
-
     return res?.data?.bookmarkedTVShows;
   } catch (error) {
     return {
