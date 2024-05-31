@@ -6,6 +6,7 @@ import userRoute from "./routes/user.route.js";
 import bookmarkRoute from "./routes/bookmark.route.js";
 import cors from "cors";
 import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config({ path: "./.env" });
 
@@ -25,7 +26,9 @@ app.use(
   })
 );
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, "./client/dist")));
+
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/dist/index.html"));
 });
