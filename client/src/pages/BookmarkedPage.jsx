@@ -125,25 +125,19 @@ function BookmarkedPage() {
         </p>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] py-10">
-          {movies && movies.length === 0 ? (
-            <h2 className="py-20 text-center font-bold text-3xl text-[#fc4747]">
-              You do not have any bookmarked movies
-            </h2>
-          ) : (
-            movies?.map((item) => (
-              <DisplayCardGeneral
-                key={item?.id}
-                imgName={item?.poster_path || item?.backdrop_path}
-                year={item?.release_date}
-                mediaType="movie"
-                adult={item?.adult}
-                name={item?.title}
-                id={item?.id}
-                bookmarked={true}
-                getVideoInfo={() => getVideoInfo(item?.id, "movie")}
-              />
-            ))
-          )}
+          {movies?.map((item) => (
+            <DisplayCardGeneral
+              key={item?.id}
+              imgName={item?.poster_path || item?.backdrop_path}
+              year={item?.release_date}
+              mediaType="movie"
+              adult={item?.adult}
+              name={item?.title}
+              id={item?.id}
+              bookmarked={true}
+              getVideoInfo={() => getVideoInfo(item?.id, "movie")}
+            />
+          ))}
         </div>
       )}
 
@@ -154,25 +148,19 @@ function BookmarkedPage() {
         </p>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] py-10">
-          {tvshows && tvshows.length === 0 ? (
-            <h2 className="py-20 text-center font-bold text-3xl text-[#fc4747]">
-              You do not have any bookmarked TV Shows
-            </h2>
-          ) : (
-            tvshows?.map((item) => (
-              <DisplayCardGeneral
-                key={item?.id}
-                imgName={item?.poster_path}
-                year={item?.first_air_date}
-                mediaType="tv"
-                adult={item?.adult}
-                name={item?.name}
-                id={item?.id}
-                bookmarked={true}
-                getVideoInfo={() => getVideoInfo(item?.id, "tv")}
-              />
-            ))
-          )}
+          {tvshows?.map((item) => (
+            <DisplayCardGeneral
+              key={item?.id}
+              imgName={item?.poster_path}
+              year={item?.first_air_date}
+              mediaType="tv"
+              adult={item?.adult}
+              name={item?.name}
+              id={item?.id}
+              bookmarked={true}
+              getVideoInfo={() => getVideoInfo(item?.id, "tv")}
+            />
+          ))}
         </div>
       )}
     </div>

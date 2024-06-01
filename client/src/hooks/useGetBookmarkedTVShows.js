@@ -12,8 +12,6 @@ export default async function useGetBookmarkedTVShows() {
     });
     return res?.data?.bookmarkedTVShows;
   } catch (error) {
-    return {
-      error: "Error while Getting Bookmarked TV Shows",
-    };
+    return [];
   }
 }

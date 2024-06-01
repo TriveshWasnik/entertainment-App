@@ -14,8 +14,6 @@ export default async function useGetBookmarkedMovies() {
 
     return res?.data?.bookmarkedMovies;
   } catch (error) {
-    return {
-      error: "Error while Getting Bookmarked Movies",
-    };
+    return [];
   }
 }
