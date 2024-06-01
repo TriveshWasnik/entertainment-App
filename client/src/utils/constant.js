@@ -1,6 +1,7 @@
 import conf from "../conf/conf.js";
 /* Constants for another file whenever necessory */
-export const API_END_POINT = "http://localhost:5000/api/v1"; //"https://entertainment-api-a0nw.onrender.com/api/v1";
+export const API_END_POINT =
+  "https://entertainment-api-a0nw.onrender.com/api/v1"; //"http://localhost:5000/api/v1";
 export const API_Option = {
   headers: {
     accept: "application/json",

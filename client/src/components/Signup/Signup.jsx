@@ -5,11 +5,11 @@ import Button from "../Button";
 import FormFooter from "../FormFooter";
 import { MdMovie } from "react-icons/md";
 import axios from "axios";
-import { API_END_POINT } from "../../utils/constant";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading, setAuthUser, setAuthStatus } from "../../store/userSlice";
+import { API_END_POINT } from "../../utils/constant";
 
 function Signup() {
   const [isLogin, setIsLogin] = useState(true);
