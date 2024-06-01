@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "https://entertainment-app-nd3s.onrender.com",
+      //"https://entertainment-app-nd3s.onrender.com",
       "http://localhost:5173",
       "http://localhost:5174",
     ],
@@ -28,14 +28,14 @@ app.use(
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-app.use(express.static(path.join(__dirname, "../client/dist")));
+/*app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
-});
+}); */
 
 app.use("/api/v1/user", userRoute);
-app.use("/api/v1/bookmark", bookmarkRoute);
+app.use("/api/v1/bookmark", bookmarkRoute); // http://localhost:5000/api/v1/bookmark/movies or tvshows
 
 dbConnection();
 const PORT = process.env.PORT || 5000;
