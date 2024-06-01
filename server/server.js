@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "https://entertainment-app-w9my.onrender.com",
+      "https://entertainment-app-nd3s.onrender.com",
       "http://localhost:5173",
       "http://localhost:5174",
     ],
