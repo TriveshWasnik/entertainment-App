@@ -17,7 +17,11 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["", "http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "https://entertainment-app-w9my.onrender.com",
+      "http://localhost:5173",
+      "http://localhost:5174",
+    ],
     credentials: true,
   })
 );
@@ -25,7 +29,7 @@ app.use(
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
-app.use(express.static(staticFilesPath));
+
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
