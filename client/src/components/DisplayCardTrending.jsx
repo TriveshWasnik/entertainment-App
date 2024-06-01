@@ -27,7 +27,7 @@ function DisplayCardTrending({
     try {
       if (mediaType === "movie") {
         res = await axios.post(
-          `http://localhost:5000/api/v1/bookmark/movies/${id}`,
+          `https://entertainment-app-api-44s2.onrender.com/api/v1/bookmark/movies/${id}`, //`http://localhost:5000/api/v1/bookmark/movies/${id}`,
           {},
           {
             headers: {
