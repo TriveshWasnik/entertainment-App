@@ -4,7 +4,7 @@ import { RiBookmarkFill } from "react-icons/ri";
 import Button from "./Button";
 import BasicInfo from "./BasicInfo";
 import SubHeading from "./SubHeading";
-import { Image_Relative_Path } from "../utils/constant";
+import { API_END_POINT, Image_Relative_Path } from "../utils/constant";
 import axios from "axios";
 import conf from "../conf/conf";
 import toast from "react-hot-toast";
@@ -27,7 +27,7 @@ function DisplayCardTrending({
     try {
       if (mediaType === "movie") {
         res = await axios.post(
-          `https://entertainment-app-api-44s2.onrender.com/api/v1/bookmark/movies/${id}`, //`http://localhost:5000/api/v1/bookmark/movies/${id}`,
+          `${API_END_POINT}/bookmark/movies/${id}`,
           {},
           {
             headers: {
@@ -45,7 +45,7 @@ function DisplayCardTrending({
         }
       } else if (mediaType === "tv") {
         res = await axios.post(
-          `http://localhost:5000/api/v1/bookmark/tvshows/${id}`,
+          `${API_END_POINT}/bookmark/tvshows/${id}`,
           {},
           {
             headers: {

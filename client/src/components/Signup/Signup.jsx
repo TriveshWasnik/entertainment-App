@@ -10,7 +10,6 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading, setAuthUser, setAuthStatus } from "../../store/userSlice";
-import loadImg from "../../assets/loadingImg.gif";
 
 function Signup() {
   const [isLogin, setIsLogin] = useState(true);

@@ -4,8 +4,8 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   server: {
     proxy: {
-      "/api": {
-        target: "https://entertainment-app-api-44s2.onrender.com",
+      "/api/v1": {
+        target: "https://entertainment-api-a0nw.onrender.com",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
