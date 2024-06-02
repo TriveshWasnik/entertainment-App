@@ -1,6 +1,6 @@
 import conf from "../conf/conf.js";
 /* Constants for another file whenever necessory */
-export const API_END_POINT = `${conf.serverURL}/api/v1`; /*"http://localhost:5000/api/v1`*/
+export const API_END_POINT = `${conf.serverURL}/api/v1`;
 export const API_Option = {
   headers: {
     accept: "application/json",

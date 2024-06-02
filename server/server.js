@@ -17,30 +17,24 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: [
-      "https://entertainmentapp-lqeh.onrender.com",
-      "http://localhost:5173",
-      "http://localhost:5174",
-    ],
+    origin: ["https://entertainmentapp-lqeh.onrender.com"],
     credentials: true,
   })
 );
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+/*const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
-});
+}); */
 
-app.use("/api/v1/user", userRoute); // Ex route http://localhost:5000/api/v1/user/login or signup or logout
-app.use("/api/v1/bookmark", bookmarkRoute); // Ex route http://localhost:5000/api/v1/bookmark/movies or tvshows
+app.use("/api/v1/user", userRoute); // Ex route https://entertainment-api-a0nw.onrender.com/api/v1/user/login or signup or logout
+app.use("/api/v1/bookmark", bookmarkRoute); // Ex route https://entertainment-api-a0nw.onrender.com/api/v1/bookmark/movies or tvshows
 
 dbConnection();
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, function () {
   console.log(`Server Running at PORT ${PORT}`);
 });
-
-//Entertainment App Render Server Address :   https://entertainment-api-a0nw.onrender.com
