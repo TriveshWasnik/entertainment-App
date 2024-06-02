@@ -84,6 +84,7 @@ export const loginUser = async (req, res) => {
         secure: true,
         maxAge: 1 * 24 * 60 * 60 * 1000,
       })
+      .set("Authorization", `Bearer ${process.env.TMDB_TOKEN}`)
       .json({
         message: "User Logged In successfully",
         success: true,
@@ -103,6 +104,7 @@ export const logoutUser = async function (req, res) {
     return res
       .status(200)
       .cookie("token", "", { httpOnly: true, secure: true, maxAge: 0 })
+      .set("Authorization", "")
       .json({ message: "User logged out successfully", success: true });
   } catch (error) {
     console.log(error);

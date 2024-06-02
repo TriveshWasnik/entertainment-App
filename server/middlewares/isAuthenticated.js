@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 export default async function isAuthenticated(req, res, next) {
   try {
     // get the token through browser cookie
-    const token = req.cookies.token;
+    const token = req.cookies?.token || req.header("Authorization");
     // token not means user not login
     if (!token) {
       return res
