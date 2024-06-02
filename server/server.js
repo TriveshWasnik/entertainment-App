@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "https://entertainment-app-gg01.onrender.com",
+      //"https://entertainment-app-gg01.onrender.com",
       "http://localhost:5173",
       "http://localhost:5174",
     ],
@@ -43,4 +43,4 @@ app.listen(PORT, function () {
   console.log(`Server Running at PORT ${PORT}`);
 });
 
-//Render Server Address :   https://entertainment-api-a0nw.onrender.com
+//Entertainment App Render Server Address :   https://entertainment-api-a0nw.onrender.com
