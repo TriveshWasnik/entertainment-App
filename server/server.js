@@ -28,11 +28,11 @@ app.use(
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-app.use(express.static(path.join(__dirname, "../client/dist")));
+//app.use(express.static(path.join(__dirname, "../client/dist")));
 
-app.get("*", function (req, res) {
+/*app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
-});
+});*/
 
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/bookmark", bookmarkRoute); // Ex route http://localhost:5000/api/v1/bookmark/movies or tvshows
