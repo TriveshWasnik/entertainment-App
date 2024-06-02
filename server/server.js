@@ -34,7 +34,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });*/
 
-app.use("/api/v1/user", userRoute);
+app.use("/api/v1/user", userRoute); // Ex route http://localhost:5000/api/v1/user/login or signup or logout
 app.use("/api/v1/bookmark", bookmarkRoute); // Ex route http://localhost:5000/api/v1/bookmark/movies or tvshows
 
 dbConnection();

@@ -7,7 +7,7 @@ import { TVShow } from "../models/tvshow.model.js";
 /* Controller function for Bookmarked movie */
 export const bookmarkMovie = async function (req, res) {
   try {
-    // get the userId from authenticate middleware
+    // get the req.id come from authenticate middleware
     const userId = req.id;
     // check user in database or not
     const user = await User.findById(userId);
