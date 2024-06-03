@@ -84,7 +84,7 @@ export const loginUser = async (req, res) => {
         secure: true,
         maxAge: 1 * 24 * 60 * 60 * 1000,
       })
-      .set("Authorization", `Bearer ${process.env.TMDB_TOKEN}`)
+      .set("Authorization", `Bearer ${token}`)
       .json({
         message: "User Logged In successfully",
         success: true,
