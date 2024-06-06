@@ -1,7 +1,9 @@
 import { User } from "../models/user.model.js";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 
+dotenv.config({ path: "./.env" });
 export const signupUser = async function (req, res) {
   try {
     // Get email and Password from frontend
@@ -81,10 +83,9 @@ export const loginUser = async (req, res) => {
       .status(200)
       .cookie("token", token, {
         httpOnly: true,
-        secure: true,
+        secure: process.env.NODE_ENV === "production",
         maxAge: 1 * 24 * 60 * 60 * 1000,
       })
-      .set("Authorization", `Bearer ${token}`)
       .json({
         message: "User Logged In successfully",
         success: true,
