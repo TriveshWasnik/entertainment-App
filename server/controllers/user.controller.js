@@ -78,6 +78,8 @@ export const loginUser = async (req, res) => {
       expiresIn: "1d",
     });
 
+    localStorage.setItem("token", token);
+
     // send cookie on browser
     return res
       .status(200)
