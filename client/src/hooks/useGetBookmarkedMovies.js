@@ -8,6 +8,7 @@ export default async function useGetBookmarkedMovies() {
     const res = await axios.get(`${API_END_POINT}/bookmark/movies`, {
       headers: {
         "Content-Type": "application/json",
+        accept: "application/json",
       },
       withCredentials: true,
     });
