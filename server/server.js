@@ -17,7 +17,10 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["https://entertainmentapp-lqeh.onrender.com"],
+    origin: [
+      "https://entertainmentapp-lqeh.onrender.com",
+      "http://localhost:5173/",
+    ],
     credentials: true,
   })
 );

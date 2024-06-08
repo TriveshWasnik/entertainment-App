@@ -1,9 +1,11 @@
 import jwt from "jsonwebtoken";
+import { LocalStorage } from "node-localstorage";
+const localStorage = new LocalStorage("../scratch");
 
 export default async function isAuthenticated(req, res, next) {
   try {
     // get the token through browser cookie
-    const token = req?.cookies?.token || localStorage.getItem("token");
+    const token = req?.cookies?.token || localStorage.getItem("tokenLocal");
     console.log(token);
     // token not means user not login
     if (!token) {

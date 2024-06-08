@@ -2,8 +2,11 @@ import { User } from "../models/user.model.js";
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import { LocalStorage } from "node-localstorage";
 
 dotenv.config({ path: "./.env" });
+const localStorage = new LocalStorage("../scratch");
+
 export const signupUser = async function (req, res) {
   try {
     // Get email and Password from frontend
@@ -78,7 +81,7 @@ export const loginUser = async (req, res) => {
       expiresIn: "1d",
     });
 
-    localStorage.setItem("token", token);
+    localStorage.setItem("tokenLocal", token);
 
     // send cookie on browser
     return res
