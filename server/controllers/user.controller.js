@@ -99,6 +99,7 @@ export const loginUser = async (req, res) => {
           email: user.email,
           profilePhoto: user.profilePhoto,
         },
+        token,
       });
   } catch (error) {
     console.log(error);
