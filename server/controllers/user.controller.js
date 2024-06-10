@@ -21,6 +21,12 @@ export const signupUser = async function (req, res) {
       return res.status(401).json({ message: "Can't be empty" });
     }
 
+    // password length > 8
+
+    if (password && password.length < 8) {
+      return res.status(401).json({ message: "Alteast 8 Characters" });
+    }
+
     // Check Password is same as confirm password
     if (password !== repassword) {
       return res.status(401).json({ message: "Password does not match" });

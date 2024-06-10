@@ -61,6 +61,11 @@ function Signup() {
           dispatch(setLoading(false));
           setError(error.response.data.message);
         }
+
+        if (password.length < 8) {
+          dispatch(setLoading(false));
+          setError(error.response.data.message);
+        }
       } finally {
         setEmail("");
         setPassword("");
