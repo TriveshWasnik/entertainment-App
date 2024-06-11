@@ -62,7 +62,7 @@ function Signup() {
           setError(error.response.data.message);
         } else if (password.length < 8) {
           dispatch(setLoading(false));
-          setError(error.response.data.message);
+          setError("Password atleast 8 chars");
         }
       } finally {
         setEmail("");
