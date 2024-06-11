@@ -99,7 +99,7 @@ function Navbar() {
               alt={authUser.email}
             />
             {userMenu && (
-              <ul className="absolute top-6 right-2 md:top-0 md:left-10 px-2 min-w-40 bg-[#161d2f] rounded-md text-white  z-10">
+              <ul className="absolute top-6 right-0 md:top-0 md:left-10 px-2 min-w-40 bg-[#161d2f] rounded-md text-white  z-10">
                 <li className="p-2 text-[#ddd]">{authUser.email}</li>
                 <li
                   className="p-2 flex items-center gap-2 cursor-pointer"
