@@ -55,6 +55,13 @@ function HomePage() {
   };
   setRecommended();
 
+  useEffect(() => {
+    setLoading(true);
+    setTrendingMoviesTVShows();
+    setRecommended();
+    setLoading(false);
+  }, [movieId, tvshowId]);
+
   const [videoUrl, setVideoUrl] = useState("");
   const [videoSite, setVideoSite] = useState("");
 
