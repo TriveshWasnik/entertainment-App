@@ -91,7 +91,7 @@ function Navbar() {
           </ul>
           <div
             onClick={userMenuHandler}
-            className="w-8 h-8 border-[1px] border-white rounded-full relative bottom-10"
+            className="w-8 h-8 border-[1px] border-white rounded-full relative lg:mt-48"
           >
             <img
               className="p-1 w-full h-full rounded-full"
