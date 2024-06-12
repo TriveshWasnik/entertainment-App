@@ -127,11 +127,10 @@ function BookmarkedPage() {
         <p className="py-40 text-center font-bold  text-3xl text-[#fc4747]">
           Loading....
         </p>
-      ) : movies.length === 0 ? (
-        <p className="py-40 text-center font-bold  text-3xl text-[#fc4747]">
-          Movies not available in bookmark
-        </p>
       ) : (
+        ""
+      )}
+      {movies && movies.length > 0 ? (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] py-10">
           {movies?.map((item) => (
             <DisplayCardGeneral
@@ -147,6 +146,10 @@ function BookmarkedPage() {
             />
           ))}
         </div>
+      ) : (
+        <p className="py-40 text-center font-bold  text-3xl text-[#fc4747]">
+          Movies not available in bookmark
+        </p>
       )}
 
       <Heading text="Bookmarked TV Series" />
@@ -154,11 +157,10 @@ function BookmarkedPage() {
         <p className="py-40 text-center font-bold  text-3xl text-[#fc4747]">
           Loading....
         </p>
-      ) : tvshows.length === 0 ? (
-        <p className="py-40 text-center font-bold  text-3xl text-[#fc4747]">
-          TV Shows not available in bookmark
-        </p>
       ) : (
+        ""
+      )}
+      {tvshows && tvshows.length > 0 ? (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] py-10">
           {tvshows?.map((item) => (
             <DisplayCardGeneral
@@ -174,6 +176,10 @@ function BookmarkedPage() {
             />
           ))}
         </div>
+      ) : (
+        <p className="py-40 text-center font-bold  text-3xl text-[#fc4747]">
+          TV Shows not available in bookmark
+        </p>
       )}
     </div>
   );
